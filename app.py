@@ -24,7 +24,6 @@ def preprocess(content):
 
 
 # add documents
-
 def add_docs(page, docs):
     # add additional doc to the document set(dictionary)
     documents.update(docs)
@@ -153,7 +152,8 @@ add_docs(bible_data[0], bible_data[1])
 
 # add from previously added urls from csv file
 csv_doc = load_urls_from_csv()
-add_docs(csv_doc[0], csv_doc[1])
+if csv:
+    add_docs(csv_doc[0], csv_doc[1])
 
 # add from txt file
 # text_dataset = add_txt()
@@ -163,7 +163,7 @@ add_docs(csv_doc[0], csv_doc[1])
 
 # User Interaction
 def navigation():
-    u_input = input("Press '*1' to add more source \nPress '*2' to get Visualization \nPress '*3' to show added URL's \nPress '*4 to get the whole document'  \nPress '*5' to quit \nType your Keyword to search \n\nEnter: ")
+    u_input = input("Press '*1' to add more source \nPress '*2' to get Visualization \nPress '*3' to show added URL's \nPress '*3' to show added URL's \nPress '*5' to quit \nType your Keyword to search \n\nEnter: ")
 
     if u_input == '*1':
         try: 

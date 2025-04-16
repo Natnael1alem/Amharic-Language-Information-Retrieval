@@ -65,10 +65,12 @@ def add_src():
         else:
             print("Failed to process the URL.")
 
+        print("last url docs: \n", pages, "\n\n\n", documents)
+
         return pages, documents
     except Exception as e:
         print(f"An error occurred while reading your URL: {e}")
-        add_src()
+        # add_src()
     
 
 def add(url):
@@ -143,6 +145,8 @@ def load_urls_from_csv():
             documents.update(document)
             
             # print(pages)
+
+        # print("last url docs: \n", pages, "\n\n\n", document)
             
         return pages, documents
     except Exception as e:
